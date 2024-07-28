@@ -1,3 +1,62 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "next",
+    "next/core-web-vitals",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["react", "react-hooks", "@typescript-eslint", "prettier"],
+  "rules": {
+    // JavaScript/TypeScript rules
+    "no-unused-vars": "off", // Use @typescript-eslint/no-unused-vars instead
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      { "argsIgnorePattern": "^_" }
+    ],
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/no-inferrable-types": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+
+    // React rules
+    "react/react-in-jsx-scope": "off", // Next.js automatically imports React
+    "react/prop-types": "off", // Disable prop-types as we use TypeScript for type checking
+    "react/jsx-filename-extension": [
+      "warn",
+      { "extensions": [".jsx", ".tsx"] }
+    ],
+    "react/jsx-uses-react": "off",
+    "react/jsx-uses-vars": "error",
+
+    // React hooks rules
+    "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+    "react-hooks/exhaustive-deps": "warn", // Checks effect dependencies
+
+    // Prettier rules
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
+
+    // Other custom rules
+    "no-console": "warn",
+    "no-debugger": "warn",
+    "eqeqeq": ["error", "always"],
+    "curly": "error",
+    "semi": ["error", "always"],
+    "quotes": ["error", "single"]
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
 }
