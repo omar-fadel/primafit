@@ -16,7 +16,7 @@ const Section: React.FC<SectionProps> = (props) => {
         <div
           className={` ${reverse ? 'text-end' : 'text-start'} flex h-full w-1/2 flex-col justify-center px-8`}
         >
-          <SectionTitle text={props.header} reverse={!props.reverse} />
+          <SectionTitle text={props.header} reverse={reverse} />
           <p className="text-body text-secondary">
             Enjoyable fitness solutions for a stronger, better-looking, and
             healthier you.
